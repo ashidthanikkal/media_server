@@ -1,0 +1,129 @@
+server creation
+---------------
+
+1- create a new folder for server
+
+server - node -express
+              -json-server
+
+npm-node modules
+    -pcakage.json
+
+2-create package.json filein node server
+-> npm init -y
+
+3- install json-server -npmi json-server(lates version anu ee comand kodthal kittuka.bugg ndavum so namukk thottu munnethe version mathi)
+
+api requests
+-------------
+
+add video -(title,cover image url,videourl)-post
+access video - get
+add new category - cat name-post
+access categories -get
+drag and drop - update category
+add historyc-(date and time,title, videoUrl)-post
+get histories- get
+video delete -id -delete
+cat delete -id-delete
+history delete -id-delete
+
+import
+------
+
+import -provide top of the file
+reqired - can use anywhere in afile
+
+CORS(cross origine resource sharing)
+------------------------------------
+
+Library used to conneect font-end with server
+-npm i cros
+
+
+Data conversion (json to js) befor resolve each api requests
+
+Middlewares
+-----------
+A request handler with access to the application's request-response cycle is known as middleware.
+It's a function that holds the request object, the response object, and the middleware function.
+ Middleware can also send the response to the server before the request.
+
+1.Application specific middleware-
+apply middleware for application bcz  all request in that server app need the middleware.
+
+2.Router specific midddle ware
+ apply midle ware for only specific request that need middleware.
+
+ nodemon - provide automatic recompilation (npm i -g nodemon)  nodemon index.js if error occured use npx nodemon index.js
+
+#########################################################################
+
+Home -parent component ------Add -child  component of Home
+                          --------Videos- child component of Home
+
+Add & video are sibilings
+
+Data sharing in sibiling component
+
+state lifting- sibilings thammil common state ne share chyyyunnu.
+
+
+
+Drag and drop
+-----------------
+
+onDragStart() - drag cheyunnath start aayo enn ariyan vendi use cheyyunna event
+dragOver()- drag cgeytha file drop cheyyende place le ethiyo enn ariayn
+onDrop()-drop cheyyan
+
+
+preventDefault()- eatehnkilum event repeat ayitt work cheythondirkkumkpl,namukk use cheyyam
+
+
+STEP1: Access data need to change
+        {
+      "newCatogories": "Trending",
+      "video": [],
+      "id": 1
+    }
+
+Step2: Access video data to add in videos array
+
+        {
+      "dateTime": "2024/05/09 12:33:43 PM",
+      "title": "Mix - Ranam Title Track | You Made Me Feel | Prithviraj Sukumaran | Rahman | Jakes Bejoy ",
+      "videoUrl": "https://www.youtube.com/embed/UImrau29cu8",
+      "id": 2
+    }
+
+step3:
+     {
+      "newCatogories": "Trending",
+      "video": [
+                {
+      "dateTime": "2024/05/09 12:33:43 PM",
+      "title": "Mix - Ranam Title Track | You Made Me Feel | Prithviraj Sukumaran | Rahman | Jakes Bejoy ",
+      "videoUrl": "https://www.youtube.com/embed/UImrau29cu8",
+      "id": 2
+    }
+
+      ],
+      "id": 1
+    }
+
+step4:update the changed data in backend 
+axios.
+
+
+
+Server hosting
+----------------
+
+step1:nodde_module gitignore cheyyuka
+
+step 2: "start": "node index.js" package .json ll scrpt le add cheyyuka
+
+step 3:script close cheythathin shesham "engines": {"node": ">=14.20.1"} add cheyyuka
+
+
